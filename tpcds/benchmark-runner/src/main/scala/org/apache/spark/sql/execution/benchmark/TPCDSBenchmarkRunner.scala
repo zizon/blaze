@@ -80,7 +80,7 @@ object TPCDSBenchmarkRunner {
       "time_dim", "web_page")
     tables.par.foreach { tableName =>
       spark.read.parquet(s"$dataLocation/$tableName").createOrReplaceTempView(tableName)
-      tableName -> spark.table(tableName).count()
+      //tableName -> spark.table(tableName).count()
     }
 
     // run queries
